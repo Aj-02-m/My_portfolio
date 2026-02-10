@@ -51,7 +51,7 @@ def projects():
     return jsonify([
         {"title":"SpendWise Budgeting Website","stack":"Flask + HTML + CSS + Bootstrap","Description":"A web application that helps users manage their finances by tracking income, expenses and analysing there spending patterns.","live_link":"/","repo_link":"/","Status":"Under Development"},
 
-        {"title" : "Portfolio website","stack":"Flask + Reactjs","Description":"A personal portfolio website to showcase my skills, projects and contact information.","live_link":"","repo_link":"/","Status":"Completed"},
+        {"title" : "Portfolio website","stack":"Flask + Reactjs","Description":"A personal portfolio website to showcase my skills, projects and contact information.","live_link":"https://ajaymaddineni-portfolio-dp5s.onrender.com/","repo_link":"https://github.com/Aj-02-m/My_portfolio","Status":"Completed"},
 
         {"title" : "BMI-Calculator","stack":"Flask + HTML + CSS","Description":"A web application that calculates Body Mass Index (BMI) based on user input of weight and height.","live_link":"https://bmicalcapp-htdvfebgdqbuc2fe.centralindia-01.azurewebsites.net/","repo_link":"https://github.com/Aj-02-m/BMI_Calculator-Flask-/tree/main","Status":"Completed"},
 
