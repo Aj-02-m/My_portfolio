@@ -73,5 +73,9 @@ def contact():
         "Address" : "Guntur, Andhra Pradesh, India"
     })
 
+@app.route("/health")
+def health():
+    return jsonify({"ok":True})
+
 if __name__ == "__main__":
     app.run(debug = True)
