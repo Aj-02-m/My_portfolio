@@ -20,7 +20,7 @@ const Skills = () => {
     }, []);
 
     if (loading) {
-        return <p className='pt-5 mt-5 text-center text-light'>Loading Skills...</p>;
+        return <div className='pt-5 mt-5 text-center text-light' ><p >Loading Skills...</p><p>Due to Server Issues</p></div>   ;        
     }
 
     const iconMap = {

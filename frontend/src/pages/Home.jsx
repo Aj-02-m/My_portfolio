@@ -8,7 +8,7 @@ const Home = ({ profile }) => {
         document.title = "Ajay Maddineni | Software Engineer";
     },[]);
 
-    if (!profile) return null;
+    if (!profile) return <div className='pt-5 mt-5 text-center text-light'><p >Loading Profile...</p><p>May be Due to Server Issues</p></div>;
     return (
         <div className="page">
             <section className="home-section mt-5 pt-5">
