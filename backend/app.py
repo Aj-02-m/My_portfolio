@@ -1,5 +1,5 @@
 import os
-from urllib import request
+from flask import request
 from flask import Flask, jsonify,url_for
 from flask_cors import CORS
 
@@ -50,7 +50,7 @@ def skills():
 
 @app.route("/api/projects")
 def projects():
-#status = request.args.get("status")
+    status = request.args.get("status")
     all_projects = [
         {"title":"SpendWise Budgeting Website","stack":"Flask + HTML + CSS + Bootstrap","Description":"A web application that helps users manage their finances by tracking income, expenses and analysing there spending patterns.","live_link":"/","repo_link":"/","Status":"Under Development"},
 
@@ -65,8 +65,8 @@ def projects():
         {"title":"Zoo-Website","stack":"HTML + CSS + JavaScript + Bootstrap","Description":"A website for a zoo with information about animals, exhibits, and Tickets Information.","live_link":"https://aj-02-m.github.io/Zoo-Website/","repo_link":"https://github.com/Aj-02-m/Zoo-Website/tree/main","Status":"Completed"}
     ]
 
-#    if status:
-#        all_projects = [p for p in all_projects if p["Status"].lower() == status.lower#()]
+    if status:
+        all_projects = [p for p in all_projects if p["Status"].lower() == status.lower()]
     return jsonify(all_projects)
 
 @app.route("/api/contact")
