@@ -1,4 +1,5 @@
 import os
+from urllib import request
 from flask import Flask, jsonify,url_for
 from flask_cors import CORS
 
@@ -49,7 +50,8 @@ def skills():
 
 @app.route("/api/projects")
 def projects():
-    return jsonify([
+    status = request.args.get("status")
+    all_projects = [
         {"title":"SpendWise Budgeting Website","stack":"Flask + HTML + CSS + Bootstrap","Description":"A web application that helps users manage their finances by tracking income, expenses and analysing there spending patterns.","live_link":"/","repo_link":"/","Status":"Under Development"},
 
         {"title" : "Portfolio website","stack":"Flask + Reactjs","Description":"A personal portfolio website to showcase my skills, projects and contact information.","live_link":"https://ajaymaddineni-portfolio-dp5s.onrender.com/","repo_link":"https://github.com/Aj-02-m/My_portfolio","Status":"Completed"},
@@ -61,7 +63,11 @@ def projects():
         {"title":"Ajay-Electrical-Works","stack":"HTML + CSS","Description":"Business website for electrical services and contact details.","live_link":"https://blue-hill-0cdb99b00.1.azurestaticapps.net/","repo_link":"https://github.com/Aj-02-m/Ajay-Electrical-Works/tree/main","Status":"Completed"},
 
         {"title":"Zoo-Website","stack":"HTML + CSS + JavaScript + Bootstrap","Description":"A website for a zoo with information about animals, exhibits, and Tickets Information.","live_link":"https://aj-02-m.github.io/Zoo-Website/","repo_link":"https://github.com/Aj-02-m/Zoo-Website/tree/main","Status":"Completed"}
-    ])
+    ]
+
+    if status:
+        all_projects = [p for p in all_projects if p["Status"].lower() == status.lower()]
+    return jsonify(all_projects)
 
 @app.route("/api/contact")
 def contact():
