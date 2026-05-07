@@ -20,7 +20,14 @@ const Skills = () => {
     }, []);
 
     if (loading) {
-        return <div className='pt-5 mt-5 text-center text-light' ><p >Loading Skills...</p><p>Due to Server Issues</p></div>   ;        
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        return <p>Server not reachable</p>;
+    }
+
+    if (!profile) {
+        return <p>No data available</p>;
     }
 
     const iconMap = {

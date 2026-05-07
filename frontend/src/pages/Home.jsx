@@ -5,10 +5,30 @@ import { Link } from 'react-router-dom';
 
 const Home = ({ profile }) => {
     useEffect(()=>{
-        document.title = "Ajay Maddineni | Software Engineer";
+        fetch(`${API_BASE_URL}api/profile`)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Failed to fetch");
+            }
+            return res.json();
+        })
+        .then(data => setProfile(data))
+        .catch(() => setError(true))
+        .finally(() => setLoading(false));
     },[]);
 
-    if (!profile) return <div className='pt-5 mt-5 text-center text-light'><p >Loading Profile...</p><p>May be Due to Server Issues</p></div>;
+    if (loading) {
+        return <p>Loading...</p>;
+}
+
+    if (error) {
+        return <p>Server not reachable</p>;
+}
+
+    if (!profile) {
+        return <p>No data available</p>;
+}
+}   
     return (
         <div className="page">
             <section className="home-section mt-5 pt-5">
