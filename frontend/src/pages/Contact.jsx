@@ -35,7 +35,7 @@ const Contact = () => {
                             <p><strong>LinkedIn:</strong> <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">{contact.linkedin}</a></p>
                             <p><strong>GitHub:</strong> <a href={contact.github} target="_blank" rel="noopener noreferrer">{contact.github}</a></p>
                             <p><strong>Address:</strong> {contact.Address}</p>
-                            <a href="/Ajay_ASE_Resume.pdf" download className="btn btn-primary d-flex justify-content-center">Download Resume</a>
+                            <a href="/Ajay_Resume_SE.pdf" download className="btn btn-primary d-flex justify-content-center">Download Resume</a>
                         </Card.Body>
                     </Card>
                 </Container>

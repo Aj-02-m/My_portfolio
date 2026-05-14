@@ -11,11 +11,13 @@ const Skills = () => {
     },[]);
     const [skills, setSkills] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch(`${API_BASE_URL}api/skills`)
             .then(res => res.json())
             .then(data => setSkills(data))
+            .catch(() => setError(true))
             .finally(() => setLoading(false));
     }, []);
 

@@ -27,7 +27,7 @@ const Home = ({ profile, loading, error}) => {
                                 <h4 className=" mt-2">{profile.role}</h4>
                                 <p className="mt-4 ">{profile.about}</p>
                                 <div className='mt-4 hero-btns'>
-                                    <a variant="primary" href="/Ajay_ASE_Resume.pdf"  download className='btn btn-primary hero-btn me-3'>Download Resume</a>
+                                    <a variant="primary" href="/Ajay_Resume_SE.pdf"  download className='btn btn-primary hero-btn me-3'>Download Resume</a>
                                     <Link className= "btn btn-primary hero-btn" to="/projects">View Projects</Link>
                                 </div>
                             </div>
