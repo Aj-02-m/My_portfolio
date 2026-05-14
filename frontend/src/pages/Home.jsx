@@ -1,34 +1,20 @@
 import React from "react";
-import { useEffect } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Home = ({ profile }) => {
-    useEffect(()=>{
-        fetch(`${API_BASE_URL}api/profile`)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Failed to fetch");
-            }
-            return res.json();
-        })
-        .then(data => setProfile(data))
-        .catch(() => setError(true))
-        .finally(() => setLoading(false));
-    },[]);
-
+const Home = ({ profile, loading, error}) => { 
     if (loading) {
-        return <p>Loading...</p>;
+        return <p>Loading profile...</p>;
 }
 
     if (error) {
-        return <p>Server not reachable</p>;
+        return <p>{error}</p>;
 }
 
     if (!profile) {
-        return <p>No data available</p>;
+        return <p>No profile data available</p>;
 }
-}   
+  
     return (
         <div className="page">
             <section className="home-section mt-5 pt-5">
@@ -58,5 +44,4 @@ const Home = ({ profile }) => {
 
     );
 };
-
-export default Home;
+    export default Home;
