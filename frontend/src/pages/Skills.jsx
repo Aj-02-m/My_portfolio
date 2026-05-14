@@ -28,7 +28,7 @@ const Skills = () => {
         return <p>Server not reachable</p>;
     }
 
-    if (!profile) {
+    if (!skills) {
         return <p>No data available</p>;
     }
 
